@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Student Course Registration{% endblock %}</title>
+
+    <style>
+        nav {
+            background-color: lightblue;
+            padding: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+            background: #555;
+            color: white;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: aqua;
+        }
+
+        h1 {
+            background: blue;
+            color: yellow;
+            padding: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<center>
+    <h1>STUDENT COURSE REGISTRATION PORTAL</h1>
+</center>
+
+<nav>
+    <a href="/mainpage/">HOME</a>
+    <a href="/studentlist/">STUDENT LIST</a>
+    <a href="/courselist/">COURSE LIST</a>
+    <a href="/register/">REGISTER</a>
+    <a href="/enrolledlist/">ENROLLED LIST</a>
+</nav>
+
+<section>
+    {% block content %}
+    {% endblock %}
+</section>
+
+<footer>
+    <hr>
+    <p>&copy; Developed by Sandhya</p>
+</footer>
+
+</body>
+</html>

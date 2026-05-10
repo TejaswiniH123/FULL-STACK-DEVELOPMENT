@@ -1,0 +1,42 @@
+{% extends 'basicTemplate.html' %}
+
+{% block title %}Enrolled Students{% endblock %}
+
+{% block content %}
+
+<h2>Enrolled Students</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<select name="course">
+    {% for c in Course_List %}
+        <option value="{{ c.id }}">{{ c.coursecode }}</option>
+    {% endfor %}
+</select>
+
+<input type="submit" value="SEARCH">
+
+</form>
+
+{% if student_list %}
+    <h3>Students in {{ course.coursecode }}</h3>
+
+    <table border="1">
+    <tr>
+        <th>USN</th>
+        <th>Name</th>
+        <th>Sem</th>
+    </tr>
+
+    {% for s in student_list %}
+    <tr>
+        <td>{{ s.usn }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.sem }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}
